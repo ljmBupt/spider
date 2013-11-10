@@ -6,5 +6,9 @@
 from scrapy.item import Item, Field
 
 class DmozItem(Item):
-	link = Field()
 	body = Field()
+	link = Field()
+
+class ContactItem(Item):
+	person = Field()
+	phone = Field()
