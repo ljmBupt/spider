@@ -8,13 +8,13 @@ class DmozSpider(BaseSpider):
 	name = "dmoz"
 	allowed_domains = ["mall.edai.com"]
 	start_urls = ["http://mall.edai.com/index/1"]
-	index = 12550
+	index = 1
 	host = "http://mall.edai.com/index/"
 	out = "out/"
 	items = []
 
 	def parse(self, response):
-		while self.index < 12555:
+		while self.index < 1000000:
 			self.index += 1
 			yield Request(url = self.host + str(self.index), callback = self.parse_item)
 	def parse_item(self, response):
